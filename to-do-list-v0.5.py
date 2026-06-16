@@ -37,9 +37,12 @@ while True:
 
     elif user_choice == "m":
         for i, new_task in enumerate(my_list, start=1):
-            print(i, new_task)
-            mark_done=input("\nWhich task would you like to mark done?")
-            if mark_done in my_list:
-                new_task=True
+            print(i, new_task["task"])
+
+        mark_done = input("\nWhich task would you like to mark done?")
+        task_index = int(mark_done)-1
+        my_list[task_index]["✅"] = True
+        print("Task marked as done")
+
 
 
