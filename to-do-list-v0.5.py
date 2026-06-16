@@ -22,7 +22,7 @@ while True:
                 print("Added all tasks")
                 break
             else:
-                my_list.append(new_task)
+                my_list.append({"task":new_task, "done":False})
                 print("task added")
 
 
@@ -34,5 +34,12 @@ while True:
                 print(i, new_task)
         else:
             print("\033[45mNothing found\033[0m")
+
+    elif user_choice == "m":
+        for i, new_task in enumerate(my_list, start=1):
+            print(i, new_task)
+            mark_done=input("\nWhich task would you like to mark done?")
+            if mark_done in my_list:
+                new_task=True
 
 
