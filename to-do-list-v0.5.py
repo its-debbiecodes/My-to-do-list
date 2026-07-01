@@ -42,10 +42,15 @@ choice_4="Delete task (press d)"
 print(f"\n{choice_1} \n{choice_2} \n{choice_3} \n{choice_4}")
 users_choice= input("What would you like to do?")
 
-        mark_done = input("\nWhich task would you like to mark done?")
-        task_index = int(mark_done)-1
-        my_list[task_index]["✅"] = True
-        print("Task marked as done")
+    if users_choice == "a":
+        print("Please enter your tasks (press e when done)")
+        while True:
+            task = input("Enter Tasks: ")
+            if task == "e":
+                print("\n\033[35mTask added!\033[0m")
+                break
+            else:
+                to_do_list.append(task)
 
     elif users_choice == "v":
         if len(to_do_list) > 0:
