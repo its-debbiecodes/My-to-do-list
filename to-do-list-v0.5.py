@@ -6,6 +6,10 @@ print("What would you like to do?")
 my_list=[]
 
 
+title= "Welcome to the To-Do List"
+print(f"\n\033[44m{title}\033[0m")
+
+to_do_list= []
 while True:
     choice_1="Add tasks to To-Do List (press a)"
     choice_2="View to To-Do List (press v)"
