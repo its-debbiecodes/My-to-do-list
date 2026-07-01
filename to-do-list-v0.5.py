@@ -35,9 +35,12 @@ while True:
         else:
             print("\033[45mNothing found\033[0m")
 
-    elif user_choice == "m":
-        for i, new_task in enumerate(my_list, start=1):
-            print(i, new_task["task"])
+choice_1="Add tasks to To-Do List (press a)"
+choice_2="View to To-Do List (press v)"
+choice_3="Mark tasks as done (press m)"
+choice_4="Delete task (press d)"
+print(f"\n{choice_1} \n{choice_2} \n{choice_3} \n{choice_4}")
+users_choice= input("What would you like to do?")
 
         mark_done = input("\nWhich task would you like to mark done?")
         task_index = int(mark_done)-1
