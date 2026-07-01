@@ -47,5 +47,9 @@ users_choice= input("What would you like to do?")
         my_list[task_index]["✅"] = True
         print("Task marked as done")
 
+    elif users_choice == "v":
+        if len(to_do_list) > 0:
+            list_title= "To-Do List"
+            print(f"\n\033[42m{list_title}\033[0m")
 
 
