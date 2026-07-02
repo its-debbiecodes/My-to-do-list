@@ -55,5 +55,22 @@ while True:
         else:
             print("\n\033[44mYou have no tasks in you To-do List\033[0m")
 
+    elif users_choice == "d":
+        if len(to_do_list) > 0:
+            for i, task in enumerate(to_do_list, start=1):
+                print(f"\033[32m{i}. {task['task']}\033[0m")
+
+            print("What tasks number would you like to delete (enter f when done)")
+            while True:
+                delete_task = input("Enter tasks number: ")
+                if delete_task == "f":
+                    print("Great! Tasks deleted!")
+                    break
+                else:
+                    task_index = int(delete_task) - 1
+                    to_do_list.pop(task_index)
+        else:
+            print("\n\033[44mYou have no tasks in you To-do List\033[0m")
+
 
 
