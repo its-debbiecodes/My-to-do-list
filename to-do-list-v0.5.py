@@ -1,7 +1,4 @@
 
-
-
-
 title= "Welcome to the To-Do List"
 print(f"\n\033[44m{title}\033[0m")
 
@@ -31,7 +28,12 @@ while True:
             print(f"\n\033[43m{list_title}\033[0m")
 
             for i, task in enumerate(to_do_list, start=1):
-                print(f"\033[32m{i}. {task}\033[0m")
+
+                if task["✅"] == True:
+                    print(f"\033[32m{i}. {task}\033 ✅[0m")
+                else:
+                    print(f"\033[32m{i}. {task}\033[0m")
+
 
         else:
             print("\n\033[43vmYou have no tasks added\033[0m")
