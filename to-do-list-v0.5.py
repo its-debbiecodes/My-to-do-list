@@ -41,7 +41,8 @@ while True:
     elif users_choice == "m":
         if len(to_do_list) > 0:
             for i, task in enumerate(to_do_list, start=1):
-                print(f"\033[32m{i}. {task}\033[0m")
+                print(f"\033[32m{i}. {task['task']}\033[0m")
+
             print("What tasks number would you like to mark as ✅ (enter f when done)")
             while True:
                 mark_done = input("Enter tasks number: ")
