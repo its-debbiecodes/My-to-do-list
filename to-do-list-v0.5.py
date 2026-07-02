@@ -32,8 +32,7 @@ while True:
                 if task["✅"]:
                     print(f"\033[32m{i}. {task}\033 ✅[0m")
                 else:
-                    print(f"\033[32m{i}. {task}\033[0m")
-
+                    print(f"\033[32m{i}. {task['task']}\033[0m")
 
         else:
             print("\n\033[43vmYou have no tasks added\033[0m")
