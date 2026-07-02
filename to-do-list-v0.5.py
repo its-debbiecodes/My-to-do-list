@@ -15,7 +15,7 @@ while True:
         print("Please enter your tasks (press e when done)")
         while True:
             task = input("Enter Tasks: ")
-            if task == "e":
+            if task == "f":
                 print("\n\033[35mTask added!\033[0m")
                 break
             else:
