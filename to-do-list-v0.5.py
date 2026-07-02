@@ -70,7 +70,15 @@ while True:
                     task_index = int(delete_task) - 1
                     to_do_list.pop(task_index)
         else:
-            print("\n\033[44mYou have no tasks in you To-do List\033[0m")
+            print("\n\033[42mYou have no tasks in you To-do List\033[0m")
+
+    elif users_choice == "e":
+        print("\n\033[32mThanks for using The To-Do List\033[0m")
+        break
+
+    else:
+        print(f"\033[42mOops! looks like you have a different option in mind, Please try again.\033[0m")
+        continue
 
 
 
