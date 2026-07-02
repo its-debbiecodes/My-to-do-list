@@ -3,6 +3,13 @@ title= "Welcome to the To-Do List"
 print(f"\n\033[44m{title}\033[0m")
 
 to_do_list= []
+try:
+    with open("To-Do List.json", "r") as file:
+        to_do_list = json.load(file)
+
+except FileNotFoundError:
+    print("\033[31mFile not found.\033[0m")
+
 while True:
     choice_1="Add tasks to To-Do List (press a)"
     choice_2="View to To-Do List (press v)"
