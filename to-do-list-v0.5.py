@@ -1,3 +1,4 @@
+import json
 
 title= "Welcome to the To-Do List"
 print(f"\n\033[44m{title}\033[0m")
@@ -8,7 +9,7 @@ try:
         to_do_list = json.load(file)
 
 except FileNotFoundError:
-    print("\033[31mFile not found.\033[0m")
+    print("\033[31mNo saved tasks, Staring new list!.\033[0m")
 
 while True:
     choice_1="Add tasks to To-Do List (press a)"
@@ -28,6 +29,8 @@ while True:
                 break
             else:
                 to_do_list.append({"task" : task, "✅" : False})
+        with open("To-Do List.json", "w") as file:
+            json.dump(to_do_list, file, indent=4)
 
     elif users_choice == "v":
 
@@ -62,8 +65,9 @@ while True:
                         if mark_index< 0 or mark_index > len(to_do_list):
                             print("\033[31mTask number doesn't exist\033[0m")
                         else:
-                            task_index = int(mark_done) - 1
-                            to_do_list[task_index]["✅"]= True
+                            to_do_list[mark_index]["✅"]= True
+                            with open("To-Do List.json", "w") as file:
+                                json.dump(to_do_list, file, indent=4)
                     except ValueError:
                         print("\033[31mPlease enter a valid task number!\033[0m")
         else:
@@ -88,6 +92,8 @@ while True:
 
                         else:
                             to_do_list.pop(task_index)
+                            with open("To-Do List.json", "w") as file:
+                                json.dump(to_do_list, file, indent=4)
                             print("task deleted!")
 
                     except ValueError:
